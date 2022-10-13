@@ -7,4 +7,14 @@ class DrivingLicense:
     pass
   
   def get_surname(self) -> str:
-    return "SMITH"
+    surname = self._data[2][0:5]
+    while len(surname) < 5:
+       surname += "9"
+    return surname.upper()
+       
+  def get_birth_year(self) -> str:
+    birth_year = self._data[3][-2]
+    return birth_year
+  
+  def get_birth_month(self) -> str:
+    return "01"
